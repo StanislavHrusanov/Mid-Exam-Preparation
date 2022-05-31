@@ -1,2 +1,2 @@
-# Mid-Exam-Preparation
+# JS-Fundamentals-Module-Mid-Exam-Preparation
 Mid exam preparation from my training in Softuni
