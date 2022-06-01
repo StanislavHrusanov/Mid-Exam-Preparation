@@ -118,3 +118,97 @@ price\!</span>**
 </tr>
 </tbody>
 </table>
+
+## **Problem 2 - The Lift**
+
+Write a program that **finds a place for the tourist on a lift. **
+
+Every wagon should have **a maximum of 4 people on it**. If a wagon is
+full, you should direct the people to **the next one with space**
+available.
+
+### Input
+
+  - **On the first line,** you will receive **how many people** are
+    waiting to get **on the lift**
+
+  - **On the second line**, you will receive the **current state of the
+    lift separated by a single space:** **" "**.
+
+### Output
+
+**When there is no more available space left on the lift**, or there are
+**no more people in the queue**, you should print on the console the
+final state of the lift's wagons separated by **" "** and one of the
+following messages:
+
+  - If there are no more people and the lift have empty spots, you
+    should print:
+
+> **"The lift has empty spots\!**
+> 
+> **{wagons separated by ' '}"**
+
+  - If there are still people in the queue and no more available space,
+    you should print:
+
+> **"There isn't enough space\! {people} people in a queue\!**
+> 
+> **{wagons separated by ' '}"**
+
+  - If the lift is full and there are no more people in the queue, you
+    should print only the wagons separated by **" "**
+
+
+### JS Examples
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>[</strong></p>
+<p><strong>"15",</strong></p>
+<p><strong>"0 0 0 0 0"</strong></p>
+<p><strong>]</strong></p></td>
+<td><p><strong>The lift has empty spaces!</strong></p>
+<p><strong>4 4 4 3 0</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>Comment</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p><strong>First state - 4 0 0 0 -&gt; 11 people left</strong></p>
+<p><strong>Second state – 4 4 0 0 -&gt; 7 people left</strong></p>
+<p><strong>Third state – 4 4 4 0 -&gt; 3</strong> people <strong>left</strong></p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="odd">
+<td><p><strong>[</strong></p>
+<p><strong>"20",</strong></p>
+<p><strong>"0 2 0"</strong></p>
+<p><strong>]</strong></p></td>
+<td><p><strong>There isn't enough space! 10 people in a queue!</strong></p>
+<p><strong>4 4 4</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>Comment</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p><strong>First state - 4 2 0 -&gt; 16 people left</strong></p>
+<p><strong>Second state – 4 4 0 -&gt; 14 people left</strong></p>
+<p><strong>Third state – 4 4 4 -&gt; 10</strong> people <strong>left, but there're no more wagons.</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
