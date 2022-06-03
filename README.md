@@ -432,3 +432,101 @@ print it in the following format: **"Time needed: {time}h."**
 </tr>
 </tbody>
 </table>
+
+## **Problem 5 - Array Modifier**
+
+You are given **an array with integers**. Write a program to **modify
+the elements** after **receiving the following commands:**
+
+  - "**swap {index1} {index2}**" takes **two elements** and **swap their
+    places**.
+
+  - "**multiply {index1} {index2}**" takes **element at the
+    1<sup>st</sup> index** and **multiply** **it** **with the element at
+    2<sup>nd</sup> index**. **Save the product at the 1<sup>st</sup>
+    index.**
+
+  - "**decrease**" **decreases** **all elements** in the array **with
+    1**.
+
+## Input
+
+On the **first input line,** you will be given **the initial array
+values** separated by a single space.
+
+On the **next lines** you will receive commands **until** you receive
+the **command "end"**. The **commands are** as follow:
+
+  - "**swap {index1} {index2}**"
+
+  - "**multiply {index1} {index2}**"
+
+  - "**decrease**"
+
+## Output
+
+**The output** should be printed on the console and consist of
+**elements** **of the** **modified array** – **separated by a comma and
+a single space** "**,** ".
+
+## Constraints
+
+  - **Elements of the array** will be **integer numbers** in the range
+    **\[-2<sup>31</sup>...2<sup>31</sup>\]**
+
+  - **Count of the array elements** will be in the range **\[2...100\]**
+
+  - **Indexes** **will be always in the range of the array**
+
+## JS Examples
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Comments</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>[</p>
+<p>'23 -2 321 87 42 90 -123',</p>
+<p>'swap 1 3',</p>
+<p>'swap 3 6',</p>
+<p>'swap 1 0',</p>
+<p>'multiply 1 2',</p>
+<p>'multiply 2 1',</p>
+<p>'decrease',</p>
+<p>'end'</p>
+<p>]</p></td>
+<td>86, 7382, 2369942, -124, 41, 89, -3</td>
+<td><p>23 -2 321 87 42 90 -123 – initial values</p>
+<p>swap 1(-2) and 3(87) ▼</p>
+<p>23 87 321 -2 42 90 -123</p>
+<p>swap 3(-2) and 6(-123) ▼</p>
+<p>23 87 321 -123 42 90 -2</p>
+<p>swap 1(87) and 0(23) ▼</p>
+<p>87 23 321 -123 42 90 -2</p>
+<p>multiply 1(23) 2(321) = 7383 ▼</p>
+<p>87 7383 321 -123 42 290 -2</p>
+<p>multiply 2(321) 1(7383) = 2369943 ▼</p>
+<p>87 7383 2369943 -123 42 90 -2</p>
+<p>decrease – all - 1 ▼</p>
+<p>86 7383 2369942 -124 41 89 -3</p></td>
+</tr>
+<tr class="even">
+<td><p>[</p>
+<p>'1 2 3 4',</p>
+<p>'swap 0 1',</p>
+<p>'swap 1 2',</p>
+<p>'swap 2 3',</p>
+<p>'multiply 1 2',</p>
+<p>'decrease',</p>
+<p>'end'</p>
+<p>]</p></td>
+<td>1, 11, 3, 0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
