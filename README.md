@@ -361,3 +361,74 @@ Then print this message on the console:
 </tr>
 </tbody>
 </table>
+
+## **Problem 4 - SoftUni Reception**
+
+*Every day, thousands of students pass by the reception at SoftUni with
+different questions to ask. The employees have to help everyone by
+providing all the information and answering all of the questions.*
+
+**Three employees** are working on the reception all day. Each of them
+can handle a **different number** **of students** **per hour**. Your
+task is to **calculate how much time** it will take to **answer all the
+questions** of a given number of students.
+
+First, you will receive 3 lines with integers, representing the number
+of students that each **employee can help per hour.** On the following
+line, you will receive **students count as a single integer**.
+
+**<span class="underline">Every fourth</span> hour, all employees have a
+break, so they don't work for an hour.** It is the only break for the
+employees, because they don't need rest, nor have a personal life.
+Calculate the time needed to answer all the student's questions and
+print it in the following format: **"Time needed: {time}h."**
+
+## Input / Constraints
+
+  - > On the first three lines - **each employee efficiency** - integer
+    > in the range **\[1 - 100\]**
+
+  - > On the fourth line - **students count** – integer in the range
+    > **\[0 – 10000\]**
+
+  - > Input will always be valid and in the range specified
+
+## Output
+
+  - Print a single line: **"Time needed: {time}h."**
+
+  - Allowed working **time** / **memory**: **100ms** / **16MB**
+
+## JS Input / Output
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['5','6','4','20']</td>
+<td>Time needed: 2h.</td>
+<td><p>All employees can answer 15 students per hour. After the first hour, there are 5 students left to be answered.</p>
+<p>All students will be answered in the second hour.</p></td>
+</tr>
+<tr class="even">
+<td>['1','2','3','45']</td>
+<td>Time needed: 10h.</td>
+<td><p>All employees can answer 6 students per hour. In the first 3 hours, they have answered 6 * 3 = 18 students. Then they have a break for an hour.</p>
+<p>After the next 3 hours, there are<br />
+18 + 6 * 3 = 36 answered students.</p>
+<p>After the break for an hour, there are only 9 students to answer.</p>
+<p>So in the 10th hour, all of the student's questions would be answered.</p></td>
+</tr>
+<tr class="odd">
+<td>['3','2','5','40']</td>
+<td>Time needed: 5h.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
