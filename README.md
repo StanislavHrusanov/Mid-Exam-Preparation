@@ -530,3 +530,73 @@ a single space** "**,** ".
 </tr>
 </tbody>
 </table>
+
+## **Problem 6 - Numbers**
+
+Write a program to **read a sequence of integers** and find and print
+the **top 5** numbers **greater than the average** value in the
+sequence, sorted in descending order.
+
+## Input
+
+  - Read from the console a single line holding **space-separated
+    integers**.
+
+## Output
+
+  - Print the above-described numbers on a single line, space-separated.
+
+  - If **less than 5 numbers** hold the property mentioned above,
+    **print less** than 5 numbers.
+
+  - Print **"No"** if no numbers hold the above property.
+
+## Constraints
+
+  - All input **numbers** are integers in the **range** \[-1 000 000 …
+    1 000 000\].
+
+  - The **count of numbers** is in the **range** \[1…10 000\].
+
+## JS Input / Output
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Comments</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>'10 20 30 40 50'</strong></td>
+<td><strong>50 40</strong></td>
+<td><p><strong>Average number = 30.</strong></p>
+<p><strong>Numbers greater than 30 are: {40, 50}.</strong></p>
+<p><strong>The top 5 numbers among them in descending order are: {50, 40}.</strong></p>
+<p><strong>Note that we have only 2 numbers, so all of them are included in the top 5.</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>'5 2 3 4 -10 30 40 50 20 50 60 60 51'</strong></td>
+<td><strong>60 60 51 50 50</strong></td>
+<td><p><strong>Average number = 28.08.</strong></p>
+<p><strong>Numbers greater than 20.078 are:<br />
+{30, 40, 50, 50, 60, 60, 51}.</strong></p>
+<p><strong>The top 5 numbers among them in descending order are: {60, 60, 51, 50, 50}.</strong></p></td>
+</tr>
+<tr class="odd">
+<td><strong>'1'</strong></td>
+<td><strong>No</strong></td>
+<td><p><strong>Average number = 1.</strong></p>
+<p><strong>There are no numbers greater than 1.</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>'-1 -2 -3 -4 -5 -6'</strong></td>
+<td><strong>-1 -2 -3</strong></td>
+<td><p><strong>Average number = -3.5.</strong></p>
+<p><strong>Numbers greater than -3.5 are: {-1, -2, -3}.</strong></p>
+<p><strong>The top 5 numbers among them in descending order are: {-1, -2, -3}.</strong></p></td>
+</tr>
+</tbody>
+</table>
