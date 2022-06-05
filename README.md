@@ -674,3 +674,88 @@ won battles** in the following format:
 </tr>
 </tbody>
 </table>
+
+## **Problem 8 - Shoot for the Win**
+
+Write a program that helps you keep track of your **shot targets**. You
+will receive a **sequence with integers**, separated by a single space,
+representing targets and their value. Afterward, you will be receiving
+indices until the **"End"** command is given, and you need to print the
+**targets** and the **count of shot targets**.
+
+Every time you receive an **index**, you need to shoot the target on
+that index, **if it is possible**.
+
+Every time you **shoot a target**, its value becomes **-1, and it is
+considered shot**. Along with that, you also need to:
+
+  - **Reduce** all the other **targets**, which have **greater values**
+    than your **current** target, **with its value**.
+
+  - **Increase** all the other **targets**, which **have less than or
+    equal** value to the **shot target**, **with its value.**
+
+**Keep in mind that you can't shoot a target, which is already shot.**
+**You also can't increase or reduce a target, which is considered
+shot.**
+
+When you receive the **"End"** command, print the targets in their
+current state and the **count of shot targets** in the following format:
+
+**"Shot targets: {count} -\> {target<sub>1</sub>} {target<sub>2</sub>}…
+{target<sub>n</sub>}"**
+
+## Input / Constraints
+
+  - On the **first line** of input, you will receive a **sequence** of
+    **integers**, **separated** by **a single space – the targets
+    sequence**.
+
+  - On the **following lines**, until the **"End"** command, you be
+    receiving **integers** each on a single line – **the index of the
+    target to be shot.**
+
+## Output
+
+  - The format of the output is described above in the problem
+    description.
+
+## JS Examples
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Comments</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>(["24 50 36 70",</p>
+<p>"0",</p>
+<p>"4",</p>
+<p>"3",</p>
+<p>"1",</p>
+<p>"End"])</p></td>
+<td><strong>Shot targets 3 -&gt; -1 -1 130 -1</strong></td>
+<td><p><strong>First, we shoot the target on index 0. It becomes equal to -1, and we start going through the rest of the targets. Since 50 is more than 24, we reduce it to 26 and 36 to 12 and 70 to 46. The sequence looks like that:</strong></p>
+<p><strong>-1 26 12 46</strong></p>
+<p><strong>The next index is invalid, so we don't do anything. Index 3 is valid, and after the operations, our sequence should look like that:</strong></p>
+<p><strong>-1 72 58 -1</strong></p>
+<p><strong>Then we take the first index with value 72, and our sequence looks like that:</strong></p>
+<p><strong>-1 -1 130 -1</strong></p>
+<p><strong>Then we print the result after the "End" command.</strong></p></td>
+</tr>
+<tr class="even">
+<td><p>(["30 30 12 60 54 66",</p>
+<p>"5",</p>
+<p>"2",</p>
+<p>"4",</p>
+<p>"0",</p>
+<p>"End"])</p></td>
+<td><strong>Shot targets: 4 -&gt; -1 120 -1 66 -1 -1</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
