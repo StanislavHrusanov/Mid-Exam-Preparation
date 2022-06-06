@@ -759,3 +759,104 @@ current state and the **count of shot targets** in the following format:
 </tr>
 </tbody>
 </table>
+
+## **Problem 9 - Moving Target**
+
+You are at the shooting gallery again, and you need a program that helps
+you keep track of moving targets. On the first line, you will receive a
+**sequence of targets with their integer values**, split by a **single
+space**. Then, you will start receiving **commands for manipulating the
+targets** until the **"End"** command. The commands are the following:
+
+  - **"Shoot {index} {power}"**
+    
+      - Shoot the target at the index **if it exists** by **reducing**
+        its **value** by the **given** **power** (**integer value**).
+    
+      - Remove the target **if it is shot**. A target is considered
+        **shot** when **its value reaches 0**.
+
+  - **"Add {index} {value}"**
+    
+      - Insert a target with the received value at the received **index
+        if it exists**.
+    
+      - If not, print: **"Invalid placement\!"**
+
+  - **"Strike {index} {radius}"**
+    
+      - **Remove the target at the given index and the ones before and
+        after it depending on the radius.**
+    
+      - **If any of the indices in the range is invalid, print: "Strike
+        missed\!" and skip this command.**
+
+> **Example:** **"Strike 2 2"**
+
+|  |          |          |               |          |          |  |  |
+|  | -------- | -------- | ------------- | -------- | -------- |  |  |
+|  | {radius} | {radius} | {strikeIndex} | {radius} | {radius} |  |  |
+
+  - **"End"**
+    
+      - **Print** the sequence with targets in the following format and
+        **end** **the program**:
+
+> **"{target<sub>1</sub>}|{target<sub>2</sub>}…|{target<sub>n</sub>}"**
+
+## Input / Constraints
+
+  - On the **first line,** you will receive **the sequence of targets**
+    – **integer values \[1-10000\]**.
+
+  - On the **following lines,** until the **"End"** will be receiving
+    the command described above – **strings**.
+
+  - There will never be a case when the **"Strike"** command would empty
+    the whole sequence.
+
+## Output
+
+  - Print the appropriate message in case of any command if necessary.
+
+  - In the end, print the sequence of targets in the format described
+    above.
+
+## JS Examples
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Comments</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>(["52 74 23 44 96 110",</strong></p>
+<p><strong>"Shoot 5 10",</strong></p>
+<p><strong>"Shoot 1 80",</strong></p>
+<p><strong>"Strike 2 1",</strong></p>
+<p><strong>"Add 22 3",</strong></p>
+<p><strong>"End"])</strong></p></td>
+<td><p><strong>Invalid placement!</strong></p>
+<p><strong>52|100</strong></p></td>
+<td><p><strong>The first command is "Shoot", so we reduce the target on index 5, which is valid, with the given power – 10.</strong></p>
+<p><strong>Then we receive the same command, but we need to reduce the target on the 1<sup>st</sup> index, with power 80. The value of this target is 74, so it is considered shot, and we remove it.</strong></p>
+<p><strong>Then we receive the "Strike" command on the 2<sup>nd</sup> index, and we need to check if the range with radius 1 is valid:</strong></p>
+<p><strong>52 23 44 96 100</strong></p>
+<p><strong>And it is, so we remove the targets.</strong></p>
+<p><strong>At last, we receive the "Add" command, but the index is invalid</strong>, <strong>so we print the appropriate message</strong>, <strong>and in the end, we have the following result:</strong></p>
+<p><strong>52|100</strong></p></td>
+</tr>
+<tr class="even">
+<td><p><strong>(["1 2 3 4 5",</strong></p>
+<p><strong>"Strike 0 1",</strong></p>
+<p><strong>"End"])</strong></p></td>
+<td><p><strong>Strike missed!</strong></p>
+<p><strong>1|2|3|4|5</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
