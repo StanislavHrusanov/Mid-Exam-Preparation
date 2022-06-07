@@ -945,3 +945,74 @@ enough for a **month**.
 </tr>
 </tbody>
 </table>
+
+## **Problem 11 - Shopping List**
+
+*It's the end of the week, and it is time for you to go shopping, so you
+need to create a shopping list first.*
+
+## Input
+
+You will receive an **initial list** with groceries separated by an
+exclamation mark **"\!"**.
+
+After that, you will be receiving **4 types** of commands until you
+receive **"Go Shopping\!"**.
+
+  - **"Urgent {item}" -** **add** the item at the **start** of the list.
+    If the item **already exists,** skip this command.
+
+  - **"Unnecessary {item}" -** **remove** the item with the given name,
+    only **if it exists** in the list. Otherwise, skip this command.
+
+  - **"Correct {oldItem} {newItem}" -** if the item with the given **old
+    name** exists, **change** its name with the **new** one. Otherwise,
+    skip this command.
+
+  - **"Rearrange {item}" -** if the grocery exists in the list,
+    **remove** it from its **current position** and **add** it at the
+    **end** of the list. Otherwise, skip this command.
+
+## Constraints
+
+  - There won't be any duplicate items in the initial list
+
+## Output
+
+  - Print the **list** with all the groceries, joined by **", ":**
+
+**"{firstGrocery}, {secondGrocery}, … {nthGrocery}"**
+
+## JS Examples
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>(["Tomatoes!Potatoes!Bread",</p>
+<p>"Unnecessary Milk",</p>
+<p>"Urgent Tomatoes",</p>
+<p>"Go Shopping!"])</p></td>
+<td>Tomatoes, Potatoes, Bread</td>
+</tr>
+<tr class="even">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="odd">
+<td><p>(["Milk!Pepper!Salt!Water!Banana",</p>
+<p>"Urgent Salt",</p>
+<p>"Unnecessary Grapes",</p>
+<p>"Correct Pepper Onion",</p>
+<p>"Rearrange Grapes",</p>
+<p>"Correct Tomatoes Potatoes",</p>
+<p>"Go Shopping!"])</p></td>
+<td>Milk, Onion, Salt, Water, Banana</td>
+</tr>
+</tbody>
+</table>
