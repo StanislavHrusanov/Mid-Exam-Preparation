@@ -1313,3 +1313,68 @@ Print the corresponding messages described above.
 </tr>
 </tbody>
 </table>
+
+## **Problem 15. Inventory**
+
+*As a young traveler, you gather items and craft new items.*
+
+## Input / Constraints
+
+You will receive a journal with some collecting items, separated with a
+comma and a space (**", "**). After that, until receiving **"Craft\!"**
+you will be receiving different commands split by **" - "**:
+
+  - **"Collect - {item}"** - you should add the given item to your
+    inventory. If the item already **exists**, you should **skip** this
+    line.
+
+  - **"Drop - {item}"** - you should remove the item from your inventory
+    **if it exists**.
+
+  - **"Combine Items - {old\_item}:{new\_item}"** - you should check
+    **if the old item exists**. If so, **add** the new item **after**
+    the **old one**. Otherwise, **ignore** the command.
+
+  - **"Renew – {item}"** – if the given item exists, you should change
+    its position and **put it last** in your inventory.
+
+## Output
+
+After receiving **"Craft\!"** print the items in your inventory,
+separated by **", "**.
+
+## JS Input / Output
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>[</p>
+<p>'Iron, Wood, Sword',</p>
+<p>'Collect - Gold',</p>
+<p>'Drop - Wood',</p>
+<p>'Craft!'</p>
+<p>]</p></td>
+<td>Iron, Sword, Gold</td>
+</tr>
+<tr class="even">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="odd">
+<td><p>[</p>
+<p>'Iron, Sword',</p>
+<p>'Drop - Bronze',</p>
+<p>'Combine Items - Sword:Bow',</p>
+<p>'Renew - Iron',</p>
+<p>'Craft!'</p>
+<p>]</p></td>
+<td>Sword, Bow, Iron</td>
+</tr>
+</tbody>
+</table>
