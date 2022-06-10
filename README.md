@@ -1378,3 +1378,83 @@ separated by **", "**.
 </tr>
 </tbody>
 </table>
+
+## **Problem 16 - Black Flag** 
+
+*Pirates are invading the sea, and you're tasked to help them plunder*
+
+Create a program that checks if **target plunder** is **reached**.
+First, you will receive how many **days** the pirating lasts. Then you
+will receive how much the pirates **plunder for a day**. Last you will
+receive the **expected plunder** at the end.
+
+Calculate how much **plunder** the pirates manage to **gather**. Each
+**day** they gather the **plunder**. Keep in mind that they attack more
+ships every third day and add additional plunder to their total gain,
+which is **50% of the daily plunder**. Every **fifth day** the pirates
+encounter a warship, and after the battle, they **lose 30%** of their
+**total plunder**.
+
+If the gained plunder is **more or equal** to the target, print the
+following:
+
+**"Ahoy\! {totalPlunder} plunder gained."**
+
+If the gained plunder is **less** than the target. Calculate the
+**percentage left** and print the following:
+
+**"Collected only {percentage}% of the plunder."**
+
+Both numbers should be **formatted** to the **2<sup>nd</sup> decimal
+place**.
+
+## Input
+
+  - On the **1<sup>st</sup> line,** you will receive the **days of the
+    plunder** – an **integer number** in the range \[0…100000\]
+
+  - On the **2<sup>nd</sup> line,** you will receive the **daily
+    plunder** – an **integer number** in the range \[0…50\]
+
+  - On the **3<sup>rd</sup> line,** you will receive the **expected
+    plunder** – a **real number** in the range \[0.0…10000.0\]
+
+## Output
+
+  - In the end, print whether the plunder **was successful** or **not,**
+    following the format **described above**.
+
+## JS Examples
+
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="even">
+<td>(["5",<br />
+"40",<br />
+"100"])</td>
+<td>Ahoy! 154.00 plunder gained.</td>
+</tr>
+<tr class="odd">
+<td><strong>Comments</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>The days are 5, and the daily plunder is 40. On the third day, the total plunder is 120, and since it is a third day, they gain an additional 50% from the daily plunder, which adds up to 140. On the fifth day, the plunder is 220, but they battle with a warship and lose 30% of the collected cargo, and the total becomes 154. That is more than expected.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>(["10",</p>
+<p>"20",</p>
+<p>"380"])</p></td>
+<td>Collected only 36.29% of the plunder.</td>
+</tr>
+</tbody>
+</table>
