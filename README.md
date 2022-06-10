@@ -1578,3 +1578,143 @@ If the chest is **empty,** print the following message:
 </tr>
 </tbody>
 </table>
+
+## **Problem 18 - Man-O-War**
+
+*The pirates encounter a huge Man-O-War at sea.*
+
+Create a program that **tracks** the **battle** and either chooses a
+**winner** or prints a **stalemate**. On the **first line,** you will
+receive the **status** of the **pirate ship**, which is a **string**
+representing **integer sections** separated by **"\>"**. On **the second
+line,** you will receive the **same** type of status, but for the
+**warship**:
+
+**"{section<sub>1</sub>}\>{section<sub>2</sub>}\>{section<sub>3</sub>}…
+{section<sub>n</sub>}"**
+
+On the **third line,** you will receive the **maximum health capacity**
+a section of the ship can reach.
+
+The following lines represent commands **until** **"Retire"**:
+
+  - **"Fire {index} {damage}" - the** pirate ship **attacks** the
+    warship with the **given damage** at that section. Check if the
+    **index is valid** and if not, **skip** the command. If the section
+    **breaks** (health \<= 0) the warship **sinks**, print the following
+    and **stop** the program: **"You won\! The enemy ship has sunken."**
+
+  - **"Defend {startIndex} {endIndex} {damage}" -** the warship
+    **attacks** the pirate ship with the **given damage** at that
+    **range (indexes are inclusive)**. Check if both **indexes are
+    valid** and if not, **skip** the command. If the section **breaks**
+    (health \<= 0) the pirate ship **sinks**, print the following and
+    **stop** the program:
+
+**"You lost\! The pirate ship has sunken."**
+
+  - **"Repair {index} {health}" -** the crew **repairs** a section of
+    the **pirate ship** with the **given health**. Check if the **index
+    is valid** and if not, **skip** the command. The health of the
+    section **cannot** exceed the **maximum health capacity**.
+
+  - **"Status" -** prints the **count** of all sections of the **pirate
+    ship** that need repair soon, which are all sections that are
+    **lower than 20%** of the **maximum** **health capacity**. Print the
+    following:
+
+**"{count} sections need repair."**
+
+In the end, if a **stalemate** occurs, print the **status** of **both**
+ships, which is the **sum** of their individual sections, in the
+following format:
+
+**"Pirate ship status: {pirateShipSum}**
+
+**Warship status: {warshipSum}"**
+
+## Input
+
+  - On the **1<sup>st</sup> line,** you are going to receive the
+    **status of the pirate ship (integers separated by '\>')**
+
+  - **On the 2<sup>nd</sup> line, you are going to receive the status of
+    the warship**
+
+  - On the **3<sup>rd</sup> line,** **you will** receive the **maximum
+    health** a section of a ship can reach.
+
+  - On the following **lines**, until **"Retire"**, you will be
+    receiving commands.
+
+## Output
+
+  - Print the output in the **format** **described** **above**.
+
+## Constraints
+
+  - The **section numbers** will be integers in the range
+    \[**1**….**1000**\]
+
+  - The **indexes** will be integers \[**-200**….**200**\]
+
+  - The **damage** will be an integer in the range \[**1**….**1000**\]
+
+  - The **health** will be an integer in the range \[**1**….**1000**\]
+
+## JS Examples
+
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="even">
+<td><p>(["12&gt;13&gt;11&gt;20&gt;66",</p>
+<p>"12&gt;22&gt;33&gt;44&gt;55&gt;32&gt;18",</p>
+<p>"70",</p>
+<p>"Fire 2 11",</p>
+<p>"Fire 8 100",</p>
+<p>"Defend 3 6 11",</p>
+<p>"Defend 0 3 5",</p>
+<p>"Repair 1 33",</p>
+<p>"Status",</p>
+<p>"Retire"])</p></td>
+<td><p>2 sections need repair.</p>
+<p>Pirate ship status: 135</p>
+<p>Warship status: 205</p></td>
+</tr>
+<tr class="odd">
+<td><strong>Comments</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>First, we receive the command "<strong>Fire 2 11</strong>", and damage the warship at section index 2, which is currently 33, and after reduction, the status of the warship is the following:</p>
+<p><strong>12 22 22 44 55 32 18</strong></p>
+<p>The <strong>second</strong> and <strong>third</strong> commands have <strong>invalid indexes</strong>, so we skip them.</p>
+<p>The <strong>fourth</strong> command, <strong>"Defend 0 3 5"</strong> damages <strong>4 sections</strong> of the pirate ship with <strong>5,</strong> which results in the following states:</p>
+<p><strong>7 8 6 15 66</strong></p>
+<p>The <strong>fifth</strong> command, <strong>"Repair 1 33"</strong> repairs the pirate ship section and adds <strong>33 health</strong> to the current <strong>8,</strong> which results in <strong>41</strong></p>
+<p>Only <strong>2 sections</strong> of the pirate ship (<strong>7</strong> and <strong>6</strong>) need repair soon.</p>
+<p>In the end, there is a <strong>stalemate,</strong> so we print both ship statuses (<strong>sum</strong> of all sections).</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td><strong>Output</strong></td>
+</tr>
+<tr class="even">
+<td><p>(["2&gt;3&gt;4&gt;5&gt;2",</p>
+<p>"6&gt;7&gt;8&gt;9&gt;10&gt;11",</p>
+<p>"20",</p>
+<p>"Status",</p>
+<p>"Fire 2 3",</p>
+<p>"Defend 0 4 11",</p>
+<p>"Repair 3 18",</p>
+<p>"Retire"])</p></td>
+<td><p>3 sections need repair.</p>
+<p>You lost! The pirate ship has sunken.</p></td>
+</tr>
+</tbody>
+</table>
